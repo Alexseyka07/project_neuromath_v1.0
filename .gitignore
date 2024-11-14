@@ -32,6 +32,8 @@ __pycache__/
 *.manifest
 *.spec
 
+bot.py
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
