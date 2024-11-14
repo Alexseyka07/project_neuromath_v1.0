@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math formatter</title>
+</head>
+<body>
+    <h1>Math formatter</h1>
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
+        {% if input %}
+            <input type="text" name="input" value="{{ input }}"></input>
+        {% else %}
+            <input type="text" name="input"></input>
+        {% endif %}
+        <div>
+            <input type="submit" value="Format">
+        </div>
+    </form>
+
+    {% if result %}
+        <h2>Result</h2>
+        <div>
+            {{ result }}
+        </div>
+        <div>
+            <button onclick="copyToClipboard('{{ result }}')">Copy to clipboard</button>
+            <script>
+                function copyToClipboard(text) {
+                    var textarea = document.createElement("textarea");
+                    textarea.value = text;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(textarea);
+                }
+            </script>
+        </div>
+        
+    {% endif %}
+</body>
+</html>
