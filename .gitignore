@@ -33,6 +33,7 @@ __pycache__/
 *.spec
 
 bot.py
+*Llama/
 
 # Installer logs
 pip-log.txt
