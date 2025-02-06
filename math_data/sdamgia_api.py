@@ -1,5 +1,5 @@
 from sdamgia import SdamGIA
-from words_features import add_args, delete_punctuation
+from logic.words_features import add_args, delete_punctuation
 
 sdamgia = SdamGIA()
 SUBJECT = "math"

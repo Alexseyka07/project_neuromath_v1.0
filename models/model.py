@@ -1,6 +1,6 @@
 import keras
 from keras import layers
-import filetool
+from logic import filetool
 
 import numpy as np
 import tensorflow as tf
